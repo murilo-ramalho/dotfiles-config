@@ -73,7 +73,7 @@ set synmaxcol=240         " Limita o realce de sintaxe após 240 colunas
 
 " Configurações de Arquivos e Backups """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "set autoread              " Recarrega arquivos alterados fora do Vim
-"set backup                " Habilita backups
+set nobackup                " Habilita backups
 "set backupdir=~/.vim/backup// " Diretório para arquivos de backup
 "set undofile              " Habilita o histórico de desfazer persistente
 "set undodir=~/.vim/undo// " Diretório para arquivos de desfazer
@@ -88,7 +88,7 @@ filetype indent on        " Habilita indentação específica para cada tipo de 
 " Configurações Visuais """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "set colorcolumn=80        " Destaca a coluna 80 como alerta para o tamanho da linha
 "set guifont=Monaco:h12    " Define a fonte para o GUI
-"set guioptions-=m         " Remove a barra de menu
-"set guioptions-=T         " Remove a barra de ferramentas
-"set guioptions-=r         " Remove a barra de rolagem à direita
-"set guioptions-=L         " Remove a barra de rolagem à esquerda
+set guioptions-=m         " Remove a barra de menu
+set guioptions-=T         " Remove a barra de ferramentas
+set guioptions-=r         " Remove a barra de rolagem à direita
+set guioptions-=L         " Remove a barra de rolagem à esquerda
