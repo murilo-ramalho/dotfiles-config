@@ -14,3 +14,6 @@ vim.cmd("set lazyredraw")               -- Impede que o Neovim redesenhe a tela 
 vim.cmd("set incsearch")                -- Realça as correspondências enquanto você digita uma busca
 vim.cmd("set hlsearch")                 -- Realça todas as ocorrências do padrão de busca
 vim.cmd("set showmatch")                -- Realça parênteses correspondentes
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+

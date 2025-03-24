@@ -8,7 +8,7 @@ return {
             integrations = {
                 treesitter = true,
                 telescope = true,
-                -- Adicione outras integrações aqui
+                neotree = true,
             },
         })
         vim.cmd.colorscheme "catppuccin"

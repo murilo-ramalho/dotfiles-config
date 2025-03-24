@@ -5,8 +5,8 @@ return {
         dependencies = { 'nvim-lua/plenary.nvim' },
         config = function()
             local builtin = require("telescope.builtin")
-            vim.keymap.set('n', '<C-p>', builtin.find_files, {})  -- Ctrl + P para busca de arquivos
-            vim.keymap.set('n', '<leader>f', builtin.live_grep, {}) -- Espaço + f para busca de texto
+            vim.keymap.set('n', '<C-p>', builtin.find_files, {})
+            vim.keymap.set('n', '<leader>f', builtin.live_grep, {})
         end
     },
     {

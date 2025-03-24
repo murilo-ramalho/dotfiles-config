@@ -1,8 +1,3 @@
--- Configuração de atalhos antes de carregar plugins
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
-
--- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -19,6 +14,5 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Instalação de Plugins via Lazy.nvim
-require("lazy").setup("plugins")
 require("vim-config")
+require("lazy").setup("plugins")
