@@ -2,8 +2,8 @@ local wezterm = require 'wezterm'
 
 return {
     default_prog = { "C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe" },
-    set_enviroment_variables = {
-        HOME = "C://Users/x"
+    set_environment_variables = {
+        HOME = "C://Users/graff"
     },
 
     -- Aparência e Tema
@@ -16,8 +16,8 @@ return {
     -- Imagem de Fundo
     background = {
         {
-            source = { File = wezterm.HOME .. "/Documents/Wallpapers/pic.jpg" },
-            hsb = { brightness = 0.1 },
+            source = { File = wezterm.home_dir  .. "/Documents/Wallpapers/rebecca-cyberpunk.jpg" },
+            hsb = { brightness = 0.05 },
         },
     },
 

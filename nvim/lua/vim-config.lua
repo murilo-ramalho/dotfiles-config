@@ -17,3 +17,4 @@ vim.cmd("set showmatch")                -- Realça parênteses correspondentes
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+vim.keymap.set({"i", "n", "c", "t"}, "<C-j>", "<CR>", { noremap = true, silent = true })
