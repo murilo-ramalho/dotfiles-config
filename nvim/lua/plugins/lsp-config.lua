@@ -8,36 +8,41 @@ return {
     {
         "williamboman/mason-lspconfig.nvim",
         dependencies = { "neovim/nvim-lspconfig" },
-        config = function()
+        config = function(_, opts)
+            opts.lsp_servers = {
+                "lua_ls",
+                "clangd",
+                "pyright",
+                "eslint",
+                "jdtls",
+                "intelephense",
+                "rust_analyzer"
+            }
             require("mason-lspconfig").setup({
-                ensure_installed = {
-                    "lua_ls",
-                    "clangd",
-                    "eslint",
-                },
-                automatic_installation = false,
+                ensure_installed = opts.lsp_servers,
+                automatic_installation = true,
             })
         end
     },
     {
         "neovim/nvim-lspconfig",
-        config = function()
+        dependencies = { "williamboman/mason-lspconfig.nvim" },
+        config = function(_, opts)
             local lspconfig = require("lspconfig")
-            local capabilities = require('cmp_nvim_lsp').default_capabilities()
+            local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-            lspconfig.clangd.setup({
-                capabilities = capabilities
-            })
-            lspconfig.lua_ls.setup({
-                capabilities = capabilities
-            })
-            lspconfig.eslint.setup({
-                capabilities = capabilities
-            })
+            local lsp_servers = opts.lsp_servers or {}
 
-            vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
-            vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
-            vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, {})
+            for _, lsp in ipairs(lsp_servers) do
+                lspconfig[lsp].setup({
+                    capabilities = capabilities
+                })
+            end
+
+            vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+            vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
+            vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
+            vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {})
         end
     }
 }
