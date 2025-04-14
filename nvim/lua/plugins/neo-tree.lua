@@ -9,6 +9,6 @@ return {
     lazy = false,
     opts = {},
     config = function()
-        vim.keymap.set('n', '<C-n>', ':Neotree toggle<CR>', { noremap = true, silent = true })
+        vim.api.nvim_set_keymap("n", "<C-n>", ":Neotree toggle<CR>", {})
     end
 }
