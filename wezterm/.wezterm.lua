@@ -30,6 +30,15 @@ return {
     -- Histórico de Rolagem Ampliado
     scrollback_lines = 5000,
 
+    mouse_bindings = {
+        -- Botão direito colar (sem nenhuma tecla modificadora)
+        {
+            event={Down={streak=1, button="Right"}},
+            mods="NONE",
+            action=wezterm.action.PasteFrom("Clipboard"),
+        },
+    },
+
     keys = {
         { key = "c", mods = "ALT", action = wezterm.action.SpawnTab("CurrentPaneDomain") },
         { key = "q", mods = "ALT", action = wezterm.action.CloseCurrentTab { confirm = true } },
